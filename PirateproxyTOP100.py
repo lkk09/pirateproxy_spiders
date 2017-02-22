@@ -22,7 +22,7 @@ def main():
 
             workbook = xlwt.Workbook()
             sheet = workbook.add_sheet("TOP 100")
-            
+
             sheet.write(0, 0, 'title')
             sheet.write(0, 1, 'url')
 
@@ -36,6 +36,5 @@ def main():
             workbook.save(time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+".xls")
 
 
-
-
-main()
+if __name__ == "__main__":
+    main()
