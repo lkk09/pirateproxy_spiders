@@ -1,6 +1,6 @@
 #!#!/usr/bin/python
 
-import requests,time
+import requests,time,xlwt
 from bs4 import BeautifulSoup
 
 
@@ -20,12 +20,21 @@ def main():
 
             href=soup.find_all("a",{"title":"Download this torrent using magnet"})
 
-            with open(time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+".txt","w") as f:
-                for i in range(100):
-                    f.write(title[i].text)
-                    f.write("\t")
-                    f.write(href[i]["href"])
-                    f.write("\n")
+            workbook = xlwt.Workbook()
+            sheet = workbook.add_sheet("TOP 100")
+            
+            sheet.write(0, 0, 'title')
+            sheet.write(0, 1, 'url')
+
+            for i in range(1, 100):
+                for x in range(2):
+                    if x == 0:
+                        sheet.write(i, x,title[i-1].text)
+                    else:
+                        sheet.write(i, x, href[i-1]["href"])
+
+            workbook.save(time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+".xls")
+
 
 
 

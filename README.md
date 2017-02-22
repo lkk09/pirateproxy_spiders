@@ -10,4 +10,6 @@ pirateproxy_spiders 使用python3.x 版本编写,需要导入requests库和bs4�
 """
 
 
+
+V 1.1 修改数据保存格式为xls.
 v 1.0 获取pirateproxy TOP100.
