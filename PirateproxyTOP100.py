@@ -26,7 +26,7 @@ def main():
             sheet.write(0, 0, 'title')
             sheet.write(0, 1, 'url')
 
-            for i in range(1, 100):
+            for i in range(1, 101):
                 for x in range(2):
                     if x == 0:
                         sheet.write(i, x,title[i-1].text)
