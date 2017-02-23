@@ -26,12 +26,12 @@ def main():
             sheet.write(0, 0, 'title')
             sheet.write(0, 1, 'url')
 
-            for i in range(1, 101):
+            for i in range(len(title)):
                 for x in range(2):
                     if x == 0:
-                        sheet.write(i, x,title[i-1].text)
+                        sheet.write(i+1, x,title[i].text)
                     else:
-                        sheet.write(i, x, href[i-1]["href"])
+                        sheet.write(i+1, x, href[i]["href"])
 
             workbook.save(time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+".xls")
 
