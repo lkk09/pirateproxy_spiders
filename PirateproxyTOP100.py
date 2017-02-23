@@ -30,7 +30,7 @@ def main():
                 sheet.write(i+1, 0,title[i].text)
                 sheet.write(i+1, 1, href[i]["href"])
 
-            workbook.save(time.strftime("%Y-%m-%d %H-%M-%S", time.localtime())+".xls")
+            workbook.save(time.strftime("%Y-%m-%d", time.localtime())+"_Pirateproxy_TOP100.xls")
 
 
 if __name__ == "__main__":
